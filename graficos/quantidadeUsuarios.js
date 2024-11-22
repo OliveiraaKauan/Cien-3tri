@@ -1,19 +1,19 @@
 import { getCSS, tickConfig } from "./common.js"
 
-async function quantidadeUsuariosPorRede() {
-    const url = 'https://raw.githubusercontent.com/guilhermeonrails/api/main/numero-usuarios.json'
+async function quantidadePorMarca() {
+    const url = 'https://raw.githubusercontent.com/guilhermeonrails/api/main/numero-Marcas.json'
     const res = await fetch(url)
     const dados = await res.json()
 
-    // Extrair os nomes das redes e as quantidades de usuários
-    const nomeDasRedes = Object.keys(dados)
-    const quantidadeDeUsuarios = Object.values(dados).map(num => (num / 1e9).toFixed(2)) // Convertendo para bilhões e arredondando
+    // Extrair os nomes das marcas de bicicletas e as quantidades de bicicletas ativas por marca
+    const nomeDasMarcas = Object.keys(dados)
+    const quantidadeDeBikes = Object.values(dados).map(num => (num / 1e9).toFixed(2)) // Convertendo para bilhões e arredondando
 
     // Dados para o gráfico
     const data = [
         {
-            x: nomeDasRedes, 
-            y: quantidadeDeUsuarios, 
+            x: nomeDasMarcas, 
+            y: quantidadeDeBikes, 
             type: 'bar', // Tipo de gráfico: barras
             marker: {
                 color: getCSS('--primary-color') // Usando a cor primária do CSS
@@ -26,7 +26,7 @@ async function quantidadeUsuariosPorRede() {
         plot_bgcolor: getCSS('--bg-color'), // Cor de fundo do gráfico
         paper_bgcolor: getCSS('--bg-color'), // Cor de fundo da área fora do gráfico
         title: {
-            text: 'Redes sociais com mais usuários',
+            text: 'As Marcas de Bikes Mais Usadas em 2024',
             x: 0.5, // Centraliza o título
             font: {
                 color: getCSS('--primary-color'),
@@ -37,7 +37,7 @@ async function quantidadeUsuariosPorRede() {
         xaxis: {
             tickfont: tickConfig, // Configurações de fonte para os ticks (valores no eixo X)
             title: {
-                text: 'Nome das redes',
+                text: 'Marcas de Bicicletas',
                 font: {
                     color: getCSS('--secondary-color')
                 }
@@ -46,7 +46,7 @@ async function quantidadeUsuariosPorRede() {
         yaxis: {
             tickfont: tickConfig, // Configurações de fonte para os ticks (valores no eixo Y)
             title: {
-                text: 'Bilhões de usuários ativos',
+                text: 'Bilhões de bicicletas ativas',
                 font: {
                     color: getCSS('--secondary-color')
                 }
@@ -64,4 +64,4 @@ async function quantidadeUsuariosPorRede() {
 }
 
 // Chama a função para gerar o gráfico
-quantidadeUsuariosPorRede()
+quantidadePorMarca()

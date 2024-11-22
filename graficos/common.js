@@ -8,11 +8,11 @@ const getCSS = (variavel) => {
     return value || 'initial';
 };
 
-// Configurações de estilo para os ticks
+// Configurações de estilo para os ticks no gráfico, adaptado para o tema "Bikes"
 const tickConfig = {
-    family: getCSS('--font'),       // Fonte definida na variável CSS
+    family: getCSS('--font'),       // Fonte definida na variável CSS (pode ser algo como 'BikeFont' se houver)
     size: 16,                       // Tamanho fixo do texto
-    color: getCSS('--primary-color') // Cor primária definida na variável CSS
+    color: getCSS('--primary-color') // Cor primária, que pode representar a cor do quadro da bicicleta, por exemplo
 };
 
 // Exportando a função e a configuração
