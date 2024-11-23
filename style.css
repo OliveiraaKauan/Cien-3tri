@@ -3,8 +3,8 @@
 :root {
     --bg-color: #2C3E50; /* Cor de fundo mais sóbria, como o asfalto */
     --primary-color: #ECF0F1; /* Cor clara para contrastar com o fundo, lembrando uma estrada ou calçada */
-    --secondary-color: #27AE60; /* Verde, simbolizando as bicicletas e a natureza */
-    --accent-color: #F39C12; /* Amarelo, cor vibrante associada a bicicletas e segurança */
+    --secondary-color: #57fc9c; /* Verde, simbolizando as bicicletas e a natureza */
+    --accent-color: #ffa514; /* Amarelo, cor vibrante associada a bicicletas e segurança */
     --font: "Nunito Sans", sans-serif;
 }
 
@@ -70,7 +70,7 @@ nav a:hover {
     padding: 2rem;
     border: 3px solid var(--secondary-color);
     border-radius: 10px;
-    background-color: #34495E; /* Fundo mais escuro para destacar o texto */
+    background-color: #5eff00; /* Fundo mais escuro para destacar o texto */
     color: var(--primary-color);
 }
 
