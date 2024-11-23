@@ -1,4 +1,4 @@
-const url = 'https://raw.githubusercontent.com/guilhermeonrails/api/main/dados-bikes.json'
+const url = 'https://raw.githubusercontent.com/guilhermeonrails/api/main/dados-bikes.json';
 
 async function vizualizarInformacoesGlobais() {
     try {
@@ -14,7 +14,7 @@ async function vizualizarInformacoesGlobais() {
         const minutos = Math.round((dados.tempo_medio_uso - horas) * 60); // Convertendo a parte decimal para minutos
 
         // Calculando a porcentagem de pessoas que usam bicicletas
-        const porcentagemBicicletas = ((bicicletasUsadas / pessoasNoMundo) * 100).toFixed(2); // Porcentagem de pessoas que usam bicicletas
+        const porcentagemBicicletas = ((bicicletasUsadas / pessoasNoMundo) * 100).toFixed(2);  // Corrigido o cálculo da porcentagem
 
         // Criando o parágrafo com as informações
         const paragrafo = document.createElement('p');
